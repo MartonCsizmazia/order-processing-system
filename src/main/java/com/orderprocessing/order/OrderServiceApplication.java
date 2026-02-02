@@ -9,11 +9,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.kafka.annotation.EnableKafka;
 
-
+//use exclude in SpringBootApplication and remove @EnableKafka to disable kafka
 @SpringBootApplication(exclude = {
         org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration.class
 })
-@EnableKafka
+//@EnableKafka
 @EnableJpaAuditing
 @OpenAPIDefinition(
         info = @Info(
