@@ -1,8 +1,11 @@
 package com.orderprocessing.common.event;
 
+import lombok.Getter;
+
 import java.time.Instant;
 import java.util.UUID;
 
+@Getter
 public abstract class BaseEvent {
 
     private final String eventId;
@@ -25,19 +28,4 @@ public abstract class BaseEvent {
         this.eventType = null;
     }
 
-    public String getEventId() {
-        return eventId;
-    }
-
-    public Instant getTimestamp() {
-        return timestamp;
-    }
-
-    public String getAggregateId() {
-        return aggregateId;
-    }
-
-    public String getEventType() {
-        return eventType;
-    }
 }

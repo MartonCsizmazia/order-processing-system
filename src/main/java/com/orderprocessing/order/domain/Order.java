@@ -1,16 +1,20 @@
 package com.orderprocessing.order.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+@Getter
 @Entity
 @Table(name = "orders")
 public class Order {
 
+    // Getters
     @Id
     private String id;
 
@@ -111,15 +115,5 @@ public class Order {
         this.updatedAt = Instant.now();
     }
 
-    // Getters
-    public String getId() { return id; }
-    public String getCustomerId() { return customerId; }
-    public OrderStatus getStatus() { return status; }
     public List<OrderItem> getItems() { return new ArrayList<>(items); }
-    public BigDecimal getTotalAmount() { return totalAmount; }
-    public Instant getCreatedAt() { return createdAt; }
-    public Instant getUpdatedAt() { return updatedAt; }
-    public Long getVersion() { return version; }
-    public String getSagaId() { return sagaId; }
-    public String getFailureReason() { return failureReason; }
 }
